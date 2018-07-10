@@ -7,11 +7,12 @@ Feature: View of the menue of the landing page
         When I visit the landing page
         Then I should see  "Login" link
         And I should see "Signup" link
-        And I should see "Cibus" link
+        And I should see "Cibus" logo link
         And I should see the category "Starters" 
         And I should see the category "Main Dish"
         And I should see the category "Desserts"
 
 
-    
+
+
 
