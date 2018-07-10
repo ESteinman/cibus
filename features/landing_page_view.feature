@@ -1,0 +1,17 @@
+Feature: View of the menue of the landing page
+    As a User,
+    In order to get information about the dishes
+    I would like to see the menu on the landing page
+
+    Scenario: landing page view
+        When I visit the landing page
+        Then I should see  "Login" link
+        And I should see "Signup" link
+        And I should see "Cibus" link
+        And I should see the category "Starters" 
+        And I should see the category "Main Dish"
+        And I should see the category "Desserts"
+
+
+    
+
