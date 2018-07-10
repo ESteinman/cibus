@@ -1,6 +1,6 @@
 Feature: Display dishes on the menu page
     As a User,
-    In order to get information about the dishes,
+    In order to decide what to eat,
     I would like to see dishes on the menu page
 
     Scenario: Display dishes on the menu page
