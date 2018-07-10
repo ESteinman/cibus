@@ -7,7 +7,7 @@ Feature: View of the menu page
         When I visit the landing page
         Then I should see "Login" link
         And I should see "Signup" link
-        And I should see "Cibus" logo link
+        And I should see "logo" link
 
 
 
