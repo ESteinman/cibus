@@ -9,10 +9,9 @@ Feature: Display dishes on the menu page
             | name  | price | description   |
             | pasta | 100   | very nice     |   
         When I visit the menu page
-        Then I should see 'pasta' as a dish
-        And I should see the '100' as the price of the dish
-        And I should see a 'very nice' as a dish
+        Then I should see 'pasta' in the dish table
+        And I should see '100' in the dish table
+        And I should see 'very nice' in the dish table
         And I should see currency 'SEK'
         And I should see an 'order' button
         And I should see 'quantity' form
-
