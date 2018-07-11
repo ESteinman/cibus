@@ -1,5 +1,5 @@
 class DishesController < ApplicationController
     def index
-        @dish = Dish.all
+        @dishes = Dish.all
     end
 end

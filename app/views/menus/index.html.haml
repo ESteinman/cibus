@@ -4,11 +4,27 @@
 %h1 Cibus
 %p Welcome to the tasty world of Cibus!
 
-%table 
+
+%table   
 %thead Starters
-%tbody 
+
+%table
+%thead
+%tr
+    %th Name
+    %th Description
+    %th Price
+    %th Currency
+    %tbody
+%table
 - @dishes.each do |dish|
     %tr
         %td= dish.name
-        %td= dish.price
         %td= dish.description
+        %td= dish.price
+
+
+
+
+
+        
