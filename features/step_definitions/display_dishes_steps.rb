@@ -10,8 +10,8 @@ Then("I should see {string} in the dish table") do |name|
 end
 
 
-Then("I should see currency {string}") do |string|
-pending # Write code here that turns the phrase above into concrete actions
+Then("I should see currency {string}") do |currency|
+    expect(page).to have_content currency
 end
 
 Then("I should see an {string} button") do |string|

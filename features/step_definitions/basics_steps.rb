@@ -1,5 +1,5 @@
 Then ('show me the page') do
-    save_and_show_page
+    save_and_open_page
 end
 
 Then("I should see {string} link") do |link_name|
