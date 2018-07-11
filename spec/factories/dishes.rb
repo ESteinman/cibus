@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :dish do
-    name "MyString"
-    price 1
+    name "pasta"
+    price 100
+    description "very nice"
   end
 end
