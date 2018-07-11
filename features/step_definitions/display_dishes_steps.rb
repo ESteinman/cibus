@@ -1,10 +1,10 @@
-Given("the following dishes exists") do |table|
+Given("the following dish exists") do |table|
     table.hashes.each do |hash|
     FactoryBot.create(:dish, hash)
     end
 end
   
-Then("I should see {string} in the dish table") do |name|
+Then("I should see {string} in the starters section") do |name|
     expect(page).to have_content name
 end
 

@@ -4,15 +4,15 @@ Feature: Display dishes on the menu page
     I would like to see dishes on the menu page
 
     Background: Dish
-        Given the following dishes exists
+        Given the following dish exists
         | name  | price | description   |
         | Pasta | 100   | Very nice     |   
-        When I visit the menu page
 
     Scenario: Display dishes on the menu page
-        Then I should see 'Pasta' in the dish table
-        And I should see '100' in the dish table
-        And I should see 'Very nice' in the dish table
+        When I'm on the menu page
+        Then I should see 'Pasta' in the starters section
+        And I should see '100' in the starters section
+        And I should see 'Very nice' in the starters section
         And I should see currency 'SEK'
         And I should see 'Order' link
         And I should see 'Quantity' column
