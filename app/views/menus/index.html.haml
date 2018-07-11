@@ -4,27 +4,16 @@
 %h1 Cibus
 %p Welcome to the tasty world of Cibus!
 
-%table   
-%thead Starters
-%table
-%thead
-%tr
-    %th Name
-    %th Description
-    %th Price
-    %th Currency
-    %th Quantity
-    %tbody
 %table
 - @dishes.each do |dish|
+    %h2= dish.category
+    %p= dish.name
+    %p= dish.description
+    %p= dish.price
     %tr
-        %td= dish.name
-        %td= dish.description
-        %td= dish.price
-    %tr    
         %td SEK
 
         %td
             = number_field_tag 'Quantity', nil, min: 1, max: 10, step: 1
-%p 
+%p
     = link_to 'Order'
