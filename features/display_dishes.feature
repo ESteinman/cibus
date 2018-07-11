@@ -15,5 +15,5 @@ Feature: Display dishes on the menu page
         And I should see 'very nice' in the dish table
         Then show me the page
         And I should see currency 'SEK'
-        And I should see an 'order' button
-        And I should see 'quantity' form
+        And I should see 'order' link
+        And I should see 'Quantity' form

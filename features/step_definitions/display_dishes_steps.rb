@@ -14,9 +14,6 @@ Then("I should see currency {string}") do |currency|
     expect(page).to have_content currency
 end
 
-Then("I should see an {string} button") do |string|
-pending # Write code here that turns the phrase above into concrete actions
-end
 
 Then("I should see {string} form") do |string|
 pending # Write code here that turns the phrase above into concrete actions
