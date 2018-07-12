@@ -12,9 +12,9 @@ Feature: User adding dish to an order
         And I'm on the menu page  
         
     Scenario: Adding a dish to my order
-        When I press the 'add to cart' button next to 'Cesar Sallad'
-        And I press the 'add to cart' button next to 'Pasta'
-        And I press the 'add to cart' button next to 'Tiramisu'
+        And show me the page
+        And I press the 'Add to cart' button next to 'Pasta'
+        And I press the 'Add to cart' button next to 'Tiramisu'
         And I press the 'Check out' button
         Then I should be on 'Check out' page
         And I should see 'Cesar Sallad'

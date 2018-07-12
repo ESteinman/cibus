@@ -2,6 +2,9 @@
     = link_to 'Login'
     = link_to 'Signup'
     = checkout_link
+    = shop_icon_quantity
+    //= link_to cartify.order_items_path(order_item: {quantity: 7, product_id: product.id}), 
+    //{ method: :post, remote: true }
 
 %h1 Cibus
 %p Welcome to the tasty world of Cibus!
@@ -22,7 +25,7 @@
         %p= dish.description
         %p= "#{dish.price} SEK"
         %td
-            = add_to_cart(dish, 1, 'Add to cart')
+            //= add_to_cart(dish, 1, 'Add to cart')
 
 %h3 Desserts
 - @dishes.each do |dish|
@@ -31,5 +34,5 @@
         %p= dish.description
         %p= "#{dish.price} SEK"
         %td
-            = add_to_cart(dish, 1, 'Add to cart')
+            //= add_to_cart(dish, product_id, 'Add to cart')
 %p
