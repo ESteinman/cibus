@@ -1,17 +1,35 @@
 %p
     = link_to 'Login'
     = link_to 'Signup'
+    = checkout_link
+
 %h1 Cibus
 %p Welcome to the tasty world of Cibus!
 
 %h3 Starters
-= render 'shared/display_starters'
-
+- @dishes.each do |dish|
+    - if dish.category == 'Starters'
+        %p= dish.name
+        %p= dish.description
+        %p= "#{dish.price} SEK"
+        %td
+            = add_to_cart(dish, 1, 'Add to cart')
+    
 %h3 Main Courses
-= render 'shared/display_mains'
+- @dishes.each do |dish|
+    - if dish.category == 'Main Courses'
+        %p= dish.name
+        %p= dish.description
+        %p= "#{dish.price} SEK"
+        %td
+            = add_to_cart(dish, 1, 'Add to cart')
 
 %h3 Desserts
-= render 'shared/display_desserts'
-
+- @dishes.each do |dish|
+    - if dish.category == 'Desserts'
+        %p= dish.name
+        %p= dish.description
+        %p= "#{dish.price} SEK"
+        %td
+            = add_to_cart(dish, 1, 'Add to cart')
 %p
-    = link_to 'Order'
