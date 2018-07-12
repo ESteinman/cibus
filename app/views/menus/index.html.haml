@@ -1,7 +1,8 @@
 %p
     = link_to 'Login'
     = link_to 'Signup'
-    
+    = checkout_link
+
 %h1 Cibus
 %p Welcome to the tasty world of Cibus!
 
@@ -24,20 +25,6 @@
         %p= dish.description
         %p= "#{dish.price} SEK"
         %td
-            = number_field_tag 'Quantity', nil, min: 1, max: 10, step: 1
-        %p
-            = link_to 'Order'
-%h3 Desserts
-- @dishes.each do |dish|
-    - if dish.category == 'Desserts'
-        %p= dish.name
-        %p= dish.description
-        %p= "#{dish.price} SEK"
-        %td
-            = number_field_tag 'Quantity', nil, min: 1, max: 10, step: 1
-        %p
-            = link_to 'Order'
-
-
-
-            shop_icon_quantity
+            = add_to_cart(dish, 1, 'Add to cart')
+%p
+    = link_to 'Order'

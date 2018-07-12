@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'dishes/show'
-  get 'products/show'
-  root controller: :menus, action: :index
+  devise_for :users
+  resources :dishes, only: [:show]
+
   mount Cartify::Engine, at: '/'
+  root controller: :menus, action: :index
   resources :dishes, only: [:show]
 end
