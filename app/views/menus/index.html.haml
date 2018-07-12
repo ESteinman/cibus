@@ -1,6 +1,8 @@
 %p
     = link_to 'Login'
     = link_to 'Signup'
+    = checkout_link
+
 %h1 Cibus
 %p Welcome to the tasty world of Cibus!
 
@@ -25,6 +27,6 @@
         %td SEK
 
         %td
-            = number_field_tag 'Quantity', nil, min: 1, max: 10, step: 1
-%p 
+            = add_to_cart(dish, 1, 'Add to cart')
+%p
     = link_to 'Order'

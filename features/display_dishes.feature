@@ -16,3 +16,4 @@ Feature: Display dishes on the menu page
         And I should see currency 'SEK'
         And I should see 'Order' link
         And I should see 'Quantity' column
+        And show me the page
