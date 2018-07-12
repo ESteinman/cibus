@@ -15,13 +15,22 @@ ActiveRecord::Schema.define(version: 2018_07_11_152153) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "dishes", force: :cascade do |t|
     t.string "name"
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
+    t.bigint "category_id"
     t.string "category"
+    t.index ["category_id"], name: "index_dishes_on_category_id"
   end
 
+  add_foreign_key "dishes", "categories"
 end
