@@ -1,6 +1,6 @@
 module Cartify
     module CartsHelper
-      def add_to_cart(product, qqty = 1, name = 'Add to cart')
+      def add_to_cart(dish, qqty = 1, name = 'Add to cart')
         link_to name,
                 cartify.order_items_path(order_item: { quantity: qqty, dish_id: dish&.id }),
                 method: :post,

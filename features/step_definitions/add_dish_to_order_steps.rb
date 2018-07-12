@@ -1,4 +1,4 @@
 
-  When("I press the link") do 
-    click_link('Add to cart')
+  When("I press the {string}") do |click|
+    click_on('Add to cart')
   end

@@ -13,7 +13,7 @@ Feature: User adding dish to an order
         
     Scenario: Adding a dish to my order
         And show me the page
-        And I press the 'Add to cart' button next to 'Pasta'
+        And I press the 'Add to cart'
         And I press the 'Add to cart' button next to 'Tiramisu'
         And I press the 'Check out' button
         Then I should be on 'Check out' page
