@@ -9,22 +9,26 @@ Feature: Display dishes on the menu page
         | Pasta         | 100   | Pasta with nutella       | Main Courses   |
         | Ceasar Sallad | 200   | Healty Sallad            | Starters       |
         | Tiramisu      | 80    | The best italian dessert | Desserts       |
+        | Pizza         | 100   | Pasta with nutella       | Main Courses   |
+        | Sushi         | 200   | Healty Sallad            | Starters       |
+        | Chocolate     | 80    | The best italian dessert | Desserts       |
 
 
-    Scenario: Display dishes on the menu page
+    Scenario Outline: Display dishes on the menu page
         When I'm on the menu page
-        Then I should see 'Pasta'
-        And I should see '100'
-        And I should see 'Pasta with nutella'
-        And I should see 'Main Courses'
-        And I should see 'Cesar Sallad'
-        And I should see '200'
-        And I should see 'Healty Sallad'
-        And I should see 'Starters'
-        And I should see 'Tiramisu'
-        And I should see '80'
-        And I should see 'The best italian dessert'
-        And I should see 'Desserts'
+        Then I should see "<name>"
+        And I should see "<price>"
+        And I should see "<description>"
+        And I should see "<category>"
         And I should see currency 'SEK'
         And I should see 'Order' link
-        And I should see 'Quantity' column
+        And show me the page
+
+    Examples:
+        | name          | price | description              | category       |
+        | Pasta         | 100   | Pasta with nutella       | Main Courses   |
+        | Ceasar Sallad | 200   | Healty Sallad            | Starters       |
+        | Tiramisu      | 80    | The best italian dessert | Desserts       |
+        | Pizza         | 100   | Pasta with nutella       | Main Courses   |
+        | Sushi         | 200   | Healty Sallad            | Starters       |
+        | Chocolate     | 80    | The best italian dessert | Desserts       |
