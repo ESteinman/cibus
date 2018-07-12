@@ -1,5 +1,5 @@
 # 'product_class' is the product model name, change it to the class you are using!
-Cartify.product_class = 'Product'
+Cartify.product_class = 'Dish'
 
 # 'user_class' is the order owner model name, change it to the class you are using!
 Cartify.user_class = 'User'
