@@ -14,7 +14,7 @@
         %td= "#{dish.price} SEK"
         %td
         %span= add_to_cart(dish, qqty = 1, name = 'Add to cart')
-    
+
 %table Main Courses
 - @dishes.each do |dish|
     - if dish.category == 'Main Courses'
