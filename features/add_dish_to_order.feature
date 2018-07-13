@@ -10,7 +10,8 @@ Feature: User adding dish to an order
         | Cesar Sallad  | 200   | Sallad with Cesar     | Starter        |
         | Tiramisu      | 80    | Best italian dessert  | Dessert        |
         And I'm on the menu page  
-        
+
+    @javascript    
     Scenario: Adding a dish to my order
         And show me the page
         And I press 'Add to cart'

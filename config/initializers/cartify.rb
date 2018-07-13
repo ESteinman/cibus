@@ -1,4 +1,4 @@
-Cartify.product_class = 'Product'
+Cartify.product_class = 'Dish'
 
 Cartify.user_class = 'User'
 
