@@ -1,21 +1,21 @@
 %p
     = link_to 'Login'
     = link_to 'Signup'
-    = checkout_link
     = shop_icon_quantity
 %h1 Cibus
 %p Welcome to the tasty world of Cibus!
 
 %h3 Starters
+%table#Starters
 - @dishes.each do |dish|
     - if dish.category == 'Starters'
-        %p= dish.name
-        %p= dish.description
-        %p= "#{dish.price} SEK"
+        %tr= dish.name
+        %td= dish.description
+        %td= "#{dish.price} SEK"
         %td
-            = add_to_cart
+        %span= add_to_cart(dish, qqty = 1, name = 'Add to cart')
     
-%h3 Main Courses
+%table Main Courses
 - @dishes.each do |dish|
     - if dish.category == 'Main Courses'
         %p= dish.name
@@ -23,11 +23,13 @@
         %p= "#{dish.price} SEK"
         %td
             = add_to_cart(dish, qqty = 1, name = 'Add to cart')
-%h3 Desserts
+%table Desserts
 - @dishes.each do |dish|
     - if dish.category == 'Desserts'
         %p= dish.name
         %p= dish.description
         %p= "#{dish.price} SEK"
         %td
+            = add_to_cart(dish, qqty = 1, name = 'Add to cart')
 %p
+= link_to 'Proceed to checkout', cartify.checkout_index_path, id: 'checkout-link'
