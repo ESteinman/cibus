@@ -13,7 +13,8 @@
         %td= dish.description
         %td= "#{dish.price} SEK"
         %td
-        %span= add_to_cart(dish, qqty = 1, name = 'Add to cart')
+        %span= add_to_cart(dish, quantity, button_name)
+
 
 %table Main Courses
 - @dishes.each do |dish|

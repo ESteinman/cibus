@@ -51,12 +51,12 @@ ActiveRecord::Schema.define(version: 2018_07_13_141151) do
 
   create_table "cartify_order_items", force: :cascade do |t|
     t.integer "quantity"
-    t.decimal "unit_price", precision: 8, scale: 2
+    t.decimal "unit_price", precision: scale: 2
     t.decimal "total_price", precision: 8, scale: 2
+    t.integer "product_id"
     t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "dish_id"
     t.index ["order_id"], name: "index_cartify_order_items_on_order_id"
   end
 

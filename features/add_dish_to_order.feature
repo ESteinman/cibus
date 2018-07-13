@@ -14,7 +14,9 @@ Feature: User adding dish to an order
     @javascript    
     Scenario: Adding a dish to my order
         When I press "Add to cart" link
-        Then I should see "1 dish" in my order
+        And show me the page
+        Then I should see "You have 1 dish in your order."
+        
         
         
         
