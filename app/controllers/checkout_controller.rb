@@ -16,6 +16,7 @@ module Cartify
     end
 
     def update 
+        binding.pry
       current_order.update_attribute(:user, current_cartify_user) if current_step?(:addresses) && current_order.respond_to?(:user)
       send("update_#{step}")
       redirect_to next_wizard_path unless performed?
