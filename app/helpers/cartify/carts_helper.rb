@@ -15,4 +15,4 @@ module Cartify
         end
       end
     end
-  end
+end
