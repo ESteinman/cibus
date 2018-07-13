@@ -23,7 +23,9 @@
         %p= "#{dish.price} SEK"
         %td
             = add_to_cart(dish, qqty = 1, name = 'Add to cart')
-%table Desserts
+
+%h3 Desserts
+%table#Desserts
 - @dishes.each do |dish|
     - if dish.category == 'Desserts'
         %p= dish.name
@@ -31,5 +33,6 @@
         %p= "#{dish.price} SEK"
         %td
             = add_to_cart(dish, qqty = 1, name = 'Add to cart')
-%p
-= link_to 'Proceed to checkout', cartify.checkout_index_path, id: 'checkout-link'
+%p= link_to 'Proceed to checkout', cartify.checkout_index_path, id: 'checkout-link'
+
+    

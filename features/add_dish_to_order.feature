@@ -7,15 +7,16 @@ Feature: User adding dish to an order
         Given the following dishes exists
         | name          | price | description           | category       |
         | Pasta         | 100   | Pasta with nutella    | Main Courses   |
-        | Cesar Sallad  | 200   | Sallad with Cesar     | Starters        |
-        | Tiramisu      | 80    | Best italian dessert  | Desserts        |
+        | Cesar Sallad  | 200   | Sallad with Cesar     | Starter        |
+        | Tiramisu      | 80    | Best italian dessert  | Dessert        |
         And I'm on the menu page  
 
     @javascript    
     Scenario: Adding a dish to my order
         When I press 'Add to cart' button
+        And show me the page
         And I press 'Proceed to checkout' link
         Then I should be on 'Check out' page
-        And I should see 'Cesar Sallad'
         And I should see 'Pasta'
-        And I should see 'Tiramisu'
+  
+
