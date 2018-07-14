@@ -1,9 +1,8 @@
-.wrapper
-    .main
 %p.text-xs.text-right.bg-blue-dark.text-white
     = link_to 'Login'
     = link_to 'Signup'
     = shop_icon_quantity
+
 %body
     .bg-center.bg-blue
         %nav.sticky.pin-t.flex.items-center.justify-between.flex-wrap.bg-blue.p-6.pl-8
@@ -45,7 +44,3 @@
         %td
             = add_to_cart(dish, qqty = 1, name = 'Add to cart')
 %p= link_to 'Proceed to checkout', cartify.checkout_index_path, id: 'checkout-link'
-
-.sidebar.left
-.sidebar.right
-    
