@@ -1,38 +1,40 @@
-%p.text-xs.text-right.bg-blue-dark.text-white
-    = link_to 'Login'
-    = link_to 'Signup'
-    = shop_icon_quantity
 %body.bg-blue-dark
     .bg-center.bg-blue
-        %nav.sticky.pin-t.flex.items-center.justify-between.flex-wrap.bg-blue.p-6.pl-8
-            .flex.items-center.flex-no-shrink.text-white.mr-7
-                %span.font-sans.font-light.text-5xl.tracking-tight.p-3 Cibus
-                %span.font-sans.font-thin.text-3xl.tracking-tight.p-3 Welcome to the tasty world of Cibus
-            .block.lg:hidden
-                .w-full.block.flex-grow.lg:flex.lg:items-center.lg:w-auto
-                    .text-sm.lg:flex-grow
-                        %div
+
+%nav.flex.items-center.justify-between.flex-wrap.bg-blue.p-6
+    .flex.items-center.flex-no-shrink.text-white.mr-6
+        %span.font-medium.text-5xl.tracking-tight Cibus
+    .block.lg:hidden
+        %button.flex.items-center.px-3.py-2.border.rounded.text-teal-lighter.border-blue.hover:text-white.hover:border-white
+    .w-full.block.flex-grow.lg:flex.lg:items-center.lg:w-auto
+        .text-sm.lg:flex-grow
+        %div
+            %a.inline-block.text-sm.px-4.py-2.leading-none.border.rounded.text-white.border-white.hover:border-transparent.hover:text-white.hover:bg-white.mt-4.lg:mt-0{:href => "#"} Login
+            %a.inline-block.text-sm.px-4.py-2.leading-none.border.rounded.text-white.border-white.hover:border-transparent.hover:text-white.hover:bg-white.mt-4.lg:mt-0{:href => "#"} Signup
 
 
-%h3.bg-blue-light.text-white.text-4xl.text-thin Starters
+%h3.text-center.text-white.text-3xl.text.font-medium.tracking-tight Starters
 - @dishes.each do |dish|    
     - if dish.category == 'Starters'
-        %tr= dish.name
+        %tr.text-white.text-xl.text-thin= dish.name
         %td= dish.description
         %td= "#{dish.price} SEK"
         %td
         %span= add_to_cart(dish, quantity, button_name)
 
-%h3.text-blue.text-4xl Main Courses
+%h3.text-center.text-white.text-3xl.font-medium.tracking-tight Main Courses
 - @dishes.each do |dish|
     - if dish.category == 'Main Courses'
-        %p= dish.name
-        %p= dish.description
-        %p= "#{dish.price} SEK"
-        %td
-            = add_to_cart(dish, qqty = 1, name = 'Add to cart')
+        .flex.flex-wrap.flex-row
+            .flex.items-stretch.bg-grey-lighter.justify-center
+            .w-full.items-center.px-3{:class => "md:w-1/3"}
+            .flex-flex-col
+            %text-center.text-white.px-4.py-2.m-2= dish.name
+            %text-center.text-white.px-4.py-2.m-2= dish.description
+            %text-center.text-white.px-4.py-2.m-2= "#{dish.price} SEK"
+            %button.bg-blue-light.text-sm.no-underline.px-4.py-2.leading-none.border.rounded.text-white.border-white.hover:border-transparent.hover:text-white.hover:bg-white.mt-4.lg:mt-0= add_to_cart(dish, qqty = 1, name = 'Add to cart')
 
-%h3.text-blue.text-4xl Desserts
+%h3.text-center.text-white.text-3xl.font-medium.tracking-tight Desserts
 %table#Desserts
 - @dishes.each do |dish|
     - if dish.category == 'Desserts'
@@ -41,7 +43,4 @@
         %p= "#{dish.price} SEK"
         %td
             = add_to_cart(dish, qqty = 1, name = 'Add to cart')
-%p= link_to 'Proceed to checkout', cartify.checkout_index_path, id: 'checkout-link'
-
-.sidebar.left
-.sidebar.right
+%button.bg-blue.text-white.font-bold.py-2.px-4.border.border-blue-darker.rounded= link_to 'Proceed to checkout', cartify.checkout_index_path, id: 'checkout-link'
