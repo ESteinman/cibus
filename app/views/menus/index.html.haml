@@ -1,10 +1,8 @@
-.wrapper
-    .main
 %p.text-xs.text-right.bg-blue-dark.text-white
     = link_to 'Login'
     = link_to 'Signup'
     = shop_icon_quantity
-%body
+%body.bg-blue-dark
     .bg-center.bg-blue
         %nav.sticky.pin-t.flex.items-center.justify-between.flex-wrap.bg-blue.p-6.pl-8
             .flex.items-center.flex-no-shrink.text-white.mr-7
@@ -15,9 +13,9 @@
                     .text-sm.lg:flex-grow
                         %div
 
-%h3 Starters
-%table#Starters
-- @dishes.each do |dish|
+
+%h3.bg-blue-light.text-white.text-4xl.text-thin Starters
+- @dishes.each do |dish|    
     - if dish.category == 'Starters'
         %tr= dish.name
         %td= dish.description
@@ -25,8 +23,7 @@
         %td
         %span= add_to_cart(dish, quantity, button_name)
 
-
-%table Main Courses
+%h3.text-blue.text-4xl Main Courses
 - @dishes.each do |dish|
     - if dish.category == 'Main Courses'
         %p= dish.name
@@ -35,7 +32,7 @@
         %td
             = add_to_cart(dish, qqty = 1, name = 'Add to cart')
 
-%h3 Desserts
+%h3.text-blue.text-4xl Desserts
 %table#Desserts
 - @dishes.each do |dish|
     - if dish.category == 'Desserts'
@@ -48,4 +45,3 @@
 
 .sidebar.left
 .sidebar.right
-    
